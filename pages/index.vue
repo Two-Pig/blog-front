@@ -2,9 +2,7 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        blog-front
-      </h1>
+      <h1 class="title">blog-front</h1>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -14,6 +12,7 @@
         >
           Documentation
         </a>
+        <span>{{ name }}</span>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
@@ -28,15 +27,18 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-import { get, post } from "../utils/http";
+import axios from "../utils/http";
 export default {
   asyncData() {
-    let url = "http://10.106.0.98:8011/api/Spider/QuerySpiderList";
-    get(url).then((res) => {
+    let url = "http://localhost:8080/user/queryUsers";
+    axios.get(url).then((res) => {
       console.log(res.data.data);
     });
+    return {
+      name: "dy",
+    };
   },
+  mounted() {},
 };
 </script>
 
@@ -51,16 +53,8 @@ export default {
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;

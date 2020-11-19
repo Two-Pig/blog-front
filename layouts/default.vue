@@ -1,16 +1,25 @@
 <template>
   <div>
+    <header>
+      <span>{{ name2 }}</span>
+    </header>
     <Nuxt />
   </div>
 </template>
 <script>
-import { get, post } from "../utils/http";
+import axios from "../utils/http";
+// import NProgress from "nprogress";
 export default {
-  asyncData() {
-    let url = "http://10.106.0.98:8011/api/Spider/QuerySpiderList";
-    get(url).then((res) => {
-      console.log(res.data.data);
-    });
+  data() {
+    return {
+      name2: "22222",
+    };
+  },
+  mounted() {
+    // NProgress.start();
+    // setInterval(() => {
+    //   NProgress.done();
+    // }, 2000);
   },
 };
 </script>
