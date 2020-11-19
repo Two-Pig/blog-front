@@ -29,8 +29,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
-export default Vue.extend({})
+import { get, post } from "../utils/http";
+export default {
+  asyncData() {
+    let url = "http://10.106.0.98:8011/api/Spider/QuerySpiderList";
+    get(url).then((res) => {
+      console.log(res.data.data);
+    });
+  },
+};
 </script>
 
 <style>
