@@ -26,10 +26,12 @@
   </div>
 </template>
 
-<script lang="ts">
-import axios from "../utils/http";
+<script>
+import { axios } from "@/plugins/http";
 export default {
-  asyncData() {
+  asyncData(context) {
+    //  context.app.router.push("/home")
+    // context.redirect("/home")
     let url = "http://localhost:8080/user/queryUsers";
     axios.get(url).then((res) => {
       console.log(res.data.data);
@@ -38,7 +40,13 @@ export default {
       name: "dy",
     };
   },
-  mounted() {},
+  mounted() {
+    // this.$router.push("/home")
+    let url = "http://localhost:8080/user/queryUsers";
+    axios.get(url).then((res) => {
+      console.log(res.data.data);
+    });
+  },
 };
 </script>
 

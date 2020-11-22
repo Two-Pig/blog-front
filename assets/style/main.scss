@@ -1,0 +1,7 @@
+/* 统一全局样式的文件
+该文件导入其它全局文件，因此在导入全局样式的入口，只需要导入该文件即可*/
+
+@import "./reset.css";
+@import "./global.scss";
+@import "element-ui/lib/theme-chalk/index.css";
+@import "nprogress/nprogress.css";

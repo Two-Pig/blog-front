@@ -7,7 +7,6 @@
   </div>
 </template>
 <script>
-import axios from "../utils/http";
 // import NProgress from "nprogress";
 export default {
   data() {
@@ -23,6 +22,14 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+header {
+  span {
+
+    color: red;
+  }
+}
+</style>
 <style>
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
