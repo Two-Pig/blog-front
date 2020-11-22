@@ -27,27 +27,27 @@
 </template>
 
 <script>
-import { axios } from "@/plugins/http";
+import { axios } from "@/plugins/http"
 export default {
   asyncData(context) {
     //  context.app.router.push("/home")
     // context.redirect("/home")
-    let url = "http://localhost:8080/user/queryUsers";
+    let url = "http://localhost:8080/user/queryUsers"
     axios.get(url).then((res) => {
-      console.log(res.data.data);
-    });
+      console.log(res.data.data)
+    })
     return {
       name: "dy",
-    };
+    }
   },
   mounted() {
     // this.$router.push("/home")
-    let url = "http://localhost:8080/user/queryUsers";
+    let url = "http://localhost:8080/user/queryUsers"
     axios.get(url).then((res) => {
-      console.log(res.data.data);
-    });
+      console.log(res.data.data)
+    })
   },
-};
+}
 </script>
 
 <style>

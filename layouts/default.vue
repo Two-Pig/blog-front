@@ -1,81 +1,94 @@
+/* default是每个页面默认的布局 */
+<style lang="scss" scoped>
+header {
+  width: 100%;
+  background-color: rgb(27, 28, 29);
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.7);
+    .logo-nav {
+      display: flex;
+      align-items: center;
+      .logo {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        img {
+          width: 60px;
+          height: 60px;
+        }
+        > span {
+          font-size: 0;
+        }
+      }
+      .nav ul {
+        display: flex;
+        align-items: center;
+        li {
+          margin: 0 6px;
+          padding: 11px 13px;
+          &:hover{
+            background: rgba(255,255,255,.08);
+            color:  #fff;
+          }
+        }
+        .active {
+          color: #fff;
+          &:hover{
+            background: rgba(255,255,255,.08);
+          }
+        }
+      }
+    }
+  }
+}
+</style>
 <template>
   <div>
     <header>
-      <span>{{ name2 }}</span>
+      <nav>
+        <div class="logo-nav">
+          <div class="logo">
+            <h1>
+              <nuxt-link to="/" title="博客">
+                <img src="@/assets/logo.png" alt="博客" />
+              </nuxt-link>
+              <!-- 这里放logo图片 -->
+            </h1>
+            <span>博客</span>
+          </div>
+          <div class="nav">
+            <ul>
+              <li class="nav-item active">首页</li>
+              <li class="nav-item">分类</li>
+              <li class="nav-item">标签</li>
+              <li class="nav-item">归档</li>
+              <li class="nav-item">关于我</li>
+            </ul>
+          </div>
+        </div>
+        <div class="search">
+          <input type="text" />
+        </div>
+      </nav>
     </header>
+
     <Nuxt />
   </div>
 </template>
 <script>
-// import NProgress from "nprogress";
 export default {
   data() {
     return {
-      name2: "22222",
-    };
+
+    }
   },
   mounted() {
-    // NProgress.start();
-    // setInterval(() => {
-    //   NProgress.done();
-    // }, 2000);
+
   },
 };
 </script>
-<style lang="scss" scoped>
-header {
-  span {
-
-    color: red;
-  }
-}
-</style>
-<style>
-html {
-  font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
-</style>
