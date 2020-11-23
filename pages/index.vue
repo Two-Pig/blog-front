@@ -21,24 +21,35 @@
         >
           GitHub
         </a>
+        <ul>
+          <li v-for="item in users" :key="item.id">{{ item.nickname }}</li>
+        </ul>
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import axios from "../utils/http";
+import axios from "../utils/http"
 export default {
-  asyncData() {
-    let url = "http://localhost:8080/user/queryUsers";
-    axios.get(url).then((res) => {
-      console.log(res.data.data);
-    });
+  async asyncData() {
+    let url = "http://localhost:8080/user/queryUsers"
+    let users=[{id:1,nickname:2}]
+    await axios.get(url).then((res) => {
+      users = res.data.data.users;
+    })
     return {
       name: "dy",
+      users
     };
   },
-  mounted() {},
+  data() {
+    return {
+    
+    };
+  },
+  mounted() {
+  },
 };
 </script>
 
