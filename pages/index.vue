@@ -29,28 +29,28 @@
   </div>
 </template>
 
-<script lang="ts">
-import axios from "../utils/http"
+<script>
+import { axios } from "@/plugins/http"
 export default {
-  async asyncData() {
+  asyncData(context) {
+    //  context.app.router.push("/home")
+    // context.redirect("/home")
     let url = "http://localhost:8080/user/queryUsers"
-    let users=[{id:1,nickname:2}]
-    await axios.get(url).then((res) => {
-      users = res.data.data.users;
+    axios.get(url).then((res) => {
+      console.log(res.data.data)
     })
     return {
       name: "dy",
-      users
-    };
-  },
-  data() {
-    return {
-    
-    };
+    }
   },
   mounted() {
+    // this.$router.push("/home")
+    let url = "http://localhost:8080/user/queryUsers"
+    axios.get(url).then((res) => {
+      console.log(res.data.data)
+    })
   },
-};
+}
 </script>
 
 <style>

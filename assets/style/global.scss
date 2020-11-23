@@ -1,0 +1,15 @@
+/*自定义全局样式表*/
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+/* 重置样式 */
+
+input,
+button {
+  border: 0;
+  outline: none;
+}
