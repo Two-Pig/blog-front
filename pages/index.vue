@@ -22,7 +22,7 @@
           GitHub
         </a>
         <ul>
-          <li v-for="item in users" :key="item.id">{{ item.nickname }}</li>
+          
         </ul>
       </div>
     </div>

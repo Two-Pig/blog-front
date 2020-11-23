@@ -4,6 +4,7 @@ html,
 body,
 #app {
   height: 100%;
+  letter-spacing: 1px;
 }
 
 /* 重置样式 */
@@ -12,4 +13,8 @@ input,
 button {
   border: 0;
   outline: none;
+}
+
+body{
+  background-image: url("../images/bg.png");
 }
