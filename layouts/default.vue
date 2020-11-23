@@ -2,6 +2,7 @@
 <style lang="scss" scoped>
 header {
   width: 100%;
+  min-width: 720px;
   background-color: rgb(27, 28, 29);
   nav {
     display: flex;
@@ -31,19 +32,37 @@ header {
         li {
           margin: 0 6px;
           padding: 11px 13px;
-          &:hover{
-            background: rgba(255,255,255,.08);
-            color:  #fff;
+          white-space: nowrap;
+          &:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
           }
         }
         .active {
           color: #fff;
-          &:hover{
-            background: rgba(255,255,255,.08);
+          &:hover {
+            background: rgba(255, 255, 255, 0.08);
           }
         }
       }
     }
+    .search {
+      input {
+        background-color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+      }
+    }
+  }
+}
+footer{
+  width: 100%;
+  background-color: #1B1C1D;
+  .footer-center{
+    display: flex;
+    width: 60%;
+    margin:0 auto;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 </style>
@@ -72,19 +91,31 @@ header {
           </div>
         </div>
         <div class="search">
-          <input type="text" />
+          <el-input
+          v-model="searchValue"
+            placeholder="请输入内容"
+          >
+            <el-button slot="append" icon="el-icon-search"></el-button>
+          </el-input>
         </div>
       </nav>
     </header>
-
     <Nuxt />
+    <footer>
+      <div class="footer-center">
+        <div class="item">二维码</div>
+        <div class="item">最新博客</div>
+        <div class="item">联系我</div>
+        <div class="item">blog</div>
+      </div>
+    </footer>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-
+      searchValue:""
     }
   },
   mounted() {

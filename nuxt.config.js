@@ -17,12 +17,6 @@ export default {
         "@/assets/style/main.scss"
     ],
 
-<<<<<<< HEAD
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-    '@/plugins/element-ui',
-  ],
-=======
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [
         '@/plugins/element-ui',
@@ -31,7 +25,6 @@ export default {
         },
         '@/plugins/router'
     ],
->>>>>>> 452d797f8847ce3bcb35bccffd220a83eb5b0973
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
     components: true,
