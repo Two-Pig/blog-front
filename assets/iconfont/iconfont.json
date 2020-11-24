@@ -6,6 +6,20 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "4294072",
+      "name": "日历",
+      "font_class": "rili",
+      "unicode": "e785",
+      "unicode_decimal": 59269
+    },
+    {
+      "icon_id": "4381627",
+      "name": "浏览",
+      "font_class": "liulan",
+      "unicode": "e653",
+      "unicode_decimal": 58963
+    },
+    {
       "icon_id": "1030976",
       "name": "shouye",
       "font_class": "shouye",
