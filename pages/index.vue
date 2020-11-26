@@ -8,7 +8,8 @@
   .center {
     display: flex;
     justify-content: space-between;
-    width: 60%;
+    width: 70%;
+    max-width: 1008px;
     margin: 10px auto;
     padding: 16px 0;
     .blog-list {
@@ -22,6 +23,7 @@
         border-radius: 5px 5px 0 0;
         h3 {
           font-weight: bolder;
+          font-size: 27px;
           color: #008c8c;
         }
         .total-num {
@@ -37,7 +39,9 @@
         border: 1px solid #d4d4d5;
         .blog-item {
           padding: 16px;
-          border-bottom: 1px solid #d4d4d5;
+          &:not(:last-child) {
+            border-bottom: 1px solid #d4d4d5;
+          }
           .item {
             display: flex;
             justify-content: space-between;
@@ -57,10 +61,59 @@
                 line-height: 20px;
                 margin-bottom: 16px;
                 text-align: left;
+                font-size: 14px;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3; /*控制可显示几行文本*/
+              }
+              .info {
+                display: flex;
+                justify-content: space-between;
+                font-size: 12px;
+                width: 100%;
+                .info-left {
+                  display: flex;
+                  color: rgba(black, 0.4);
+
+                  img {
+                    border: 1px solid rgba(0, 0, 0, 0.4);
+                    border-radius: 16px;
+                    width: 25px;
+                    height: 25px;
+                    vertical-align: middle;
+                  }
+                  .user {
+                    color: #008c8c;
+                    margin-left: 2px;
+                  }
+                  .date {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10px;
+                  }
+                  .view {
+                    display: flex;
+                    align-items: center;
+                    margin-left: 10px;
+                  }
+                  i {
+                    margin-right: 2px;
+                  }
+                }
+                .info-right {
+                  text-align: right;
+                  display: flex;
+                  align-items: center;
+                  border: 1px solid blue;
+                  color: blue;
+                  border-radius: 3px;
+                  padding: 2px 4px;
+                }
               }
             }
             .item-img {
-              flex: 2;
+              flex: 3;
               padding: 10px;
               img {
                 width: 100%;
@@ -71,11 +124,139 @@
           }
         }
       }
+      .blog-list-footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        border: 1px solid #d4d4d5;
+        border-radius: 0 0 5px 5px;
+        color: blue;
+        font-size: 12px;
+        span {
+          border: 1px solid blue;
+          padding: 6px 12px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
     }
-    .categoryt {
+    .categoryt-tag-recommend {
       flex: 3;
-      padding: 14px;
-      background-color: green;
+      padding: 0 14px;
+
+      .category,
+      .tag {
+        border: 1px solid #d4d4d5;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-bottom: 14px;
+        .header {
+          display: flex;
+          justify-content: space-between;
+          padding: 14px;
+          color: #008c8c;
+          background-color: #f3f4f5;
+          border-bottom: 1px solid #d4d4d5;
+          .more {
+            display: flex;
+            cursor: pointer;
+            &:hover {
+              color: green;
+            }
+          }
+        }
+        .category-list {
+          margin: 14px;
+          border: 1px solid #d4d4d5;
+          box-shadow: 1px 1px 1px #d4d4d5;
+          border-radius: 5px;
+          div {
+            padding: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            &:not(:last-child) {
+              border-bottom: 1px solid #d4d4d5;
+            }
+
+            &:hover {
+              cursor: pointer;
+              background: rgba(0, 0, 0, 0.03);
+            }
+            .num {
+              color: blue;
+              border: 1px solid blue;
+              border-radius: 5px;
+              position: relative;
+              background-color: white;
+              span {
+                display: inline-block;
+                margin: 4px 10px;
+              }
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 9px;
+                height: 9px;
+                border-left: 1px solid blue;
+                border-bottom: 1px solid blue;
+                position: absolute;
+                background-color: inherit;
+                left: -1px;
+                top: 44%;
+                transform: translate(-50%, -50%) rotate(50deg);
+              }
+            }
+          }
+        }
+        .tag-list {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 14px;
+          .tag {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 12px;
+            &:hover {
+              cursor: pointer;
+              background: rgba(0, 0, 0, 0.03);
+            }
+            .num {
+              margin-left: 16px;
+            }
+          }
+        }
+      }
+      .recommend {
+        border: 1px solid #d4d4d5;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-bottom: 14px;
+        .header {
+          padding: 14px;
+          color: #008c8c;
+          background-color: #f3f4f5;
+          border-bottom: 1px solid #d4d4d5;
+          i {
+            margin-right: 2px;
+          }
+        }
+        .list {
+          .recommend-item {
+            &:hover {
+              cursor: pointer;
+              background: rgba(0, 0, 0, 0.03);
+            }
+
+            padding: 14px;
+            &:not(:last-child) {
+              border-bottom: 1px solid #d4d4d5;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -98,24 +279,199 @@
               <div class="item-content">
                 <h3>你真的理解什么是财富自由吗？</h3>
                 <p>
-                  正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...
+                  笑一个吧，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼
                 </p>
-                <div class="info">YLS</div>
+                <div class="info">
+                  <div class="info-left">
+                    <span class="user">
+                      <img src="@/assets/images/皮卡丘.jpg" alt="" />
+                      <span>YLS</span>
+                    </span>
+                    <span class="date">
+                      <i class="iconfont icon-rili"></i>
+                      2020-11-24
+                    </span>
+                    <span class="view">
+                      <i class="iconfont icon-liulan"></i>
+                      666666</span
+                    >
+                  </div>
+                  <div class="info-right">
+                    <span>原创</span>
+                  </div>
+                </div>
               </div>
               <div class="item-img">
                 <img src="@/assets/images/皮卡丘.jpg" alt="" />
               </div>
             </div>
           </div>
-          <div class="blog-item">content</div>
-          <div class="blog-item">content</div>
-          <div class="blog-item">content</div>
-          <div class="blog-item">content</div>
-          <div class="blog-item">content</div>
-          <div class="blog-item">content</div>
+          <div class="blog-item">
+            <div class="item">
+              <div class="item-content">
+                <h3>你真的理解什么是财富自由吗？</h3>
+                <p>
+                  笑一个吧，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼
+                </p>
+                <div class="info">
+                  <div class="info-left">
+                    <span class="user">
+                      <img src="@/assets/images/皮卡丘.jpg" alt="" />
+                      <span>YLS</span>
+                    </span>
+                    <span class="date">
+                      <i class="iconfont icon-rili"></i>
+                      2020-11-24
+                    </span>
+                    <span class="view">
+                      <i class="iconfont icon-liulan"></i>
+                      666666</span
+                    >
+                  </div>
+                  <div class="info-right">
+                    <span>原创</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item-img">
+                <img src="@/assets/images/皮卡丘.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="item">
+              <div class="item-content">
+                <h3>你真的理解什么是财富自由吗？</h3>
+                <p>
+                  笑一个吧，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼
+                </p>
+                <div class="info">
+                  <div class="info-left">
+                    <span class="user">
+                      <img src="@/assets/images/皮卡丘.jpg" alt="" />
+                      <span>YLS</span>
+                    </span>
+                    <span class="date">
+                      <i class="iconfont icon-rili"></i>
+                      2020-11-24
+                    </span>
+                    <span class="view">
+                      <i class="iconfont icon-liulan"></i>
+                      666666</span
+                    >
+                  </div>
+                  <div class="info-right">
+                    <span>原创</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item-img">
+                <img src="@/assets/images/皮卡丘.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="item">
+              <div class="item-content">
+                <h3>你真的理解什么是财富自由吗？</h3>
+                <p>
+                  笑一个吧，哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼
+                </p>
+                <div class="info">
+                  <div class="info-left">
+                    <span class="user">
+                      <img src="@/assets/images/皮卡丘.jpg" alt="" />
+                      <span>YLS</span>
+                    </span>
+                    <span class="date">
+                      <i class="iconfont icon-rili"></i>
+                      2020-11-24
+                    </span>
+                    <span class="view">
+                      <i class="iconfont icon-liulan"></i>
+                      666666</span
+                    >
+                  </div>
+                  <div class="info-right">
+                    <span>原创</span>
+                  </div>
+                </div>
+              </div>
+              <div class="item-img">
+                <img src="@/assets/images/皮卡丘.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="blog-list-footer">
+          <span>上一页</span>
+          <span>下一页</span>
         </div>
       </div>
-      <div class="categoryt">标签分类</div>
+      <div class="categoryt-tag-recommend">
+        <div class="category">
+          <div class="header">
+            <span>
+              <i class="iconfont icon-fenlei"></i>
+              分类
+            </span>
+            <span class="more">
+              more <i class="iconfont icon-gengduo"> </i
+            ></span>
+          </div>
+          <div class="category-list">
+            <div>
+              <span class="category-name">随笔日志</span>
+              <span class="num">
+                <span>26</span>
+              </span>
+            </div>
+            <div>
+              <span class="category-name">随笔日志</span>
+              <span class="num">
+                <span>26</span>
+              </span>
+            </div>
+            <div>
+              <span class="category-name">随笔日志</span>
+              <span class="num">
+                <span>26</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="tag">
+          <div class="header">
+            <span>
+              <i class="iconfont icon-biaoqian"></i>
+              标签
+            </span>
+            <span class="more">
+              more <i class="iconfont icon-gengduo"></i
+            ></span>
+          </div>
+          <div class="tag-list">
+            <el-tag class="tag">
+              <span class="tag-name">标签一</span>
+              <span class="num">26</span>
+            </el-tag>
+            <el-tag class="tag">标签一</el-tag>
+            <el-tag class="tag">标签一</el-tag>
+            <el-tag class="tag">标签一</el-tag>
+          </div>
+        </div>
+        <div class="recommend">
+          <div class="header">
+            <span> <i class="iconfont icon-tuijian"></i>最新推荐 </span>
+          </div>
+          <div class="list">
+            <div class="recommend-item">财富自由</div>
+            <div class="recommend-item">财富自由</div>
+            <div class="recommend-item">财富自由</div>
+            <div class="recommend-item">财富自由</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
