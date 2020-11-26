@@ -27,14 +27,146 @@
       </div>
       <div class="comment">
         <div class="comment-list">
-          <div class="header">
-            评论
-          </div>
+          <div class="header">评论</div>
           <div class="content-list">
-            评论内容列表
+            <div class="comment-item">
+              <div class="img">
+                <img src="@/assets/images/皮卡丘.jpg" alt="" />
+              </div>
+              <div class="comment-user">
+                <div class="user">
+                  <span class="name">
+                    <span class="sender">最强王者</span><span>@回复</span>
+                    <span class="receiver">荣耀王者</span>
+                    <span class="time">2020-11-26 23:36:21</span>
+                  </span>
+                  <span class="reply-delete">
+                    <span class="reply">回复</span>
+
+                    <span class="delete">删除</span>
+                  </span>
+                </div>
+                <div class="content">
+                  哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                </div>
+                <div class="comments">
+                  <div class="comment-item">
+                    <div class="img">
+                      <img src="@/assets/images/皮卡丘.jpg" alt="" />
+                    </div>
+                    <div class="comment-user">
+                      <div class="user">
+                        <span class="name">
+                          <span class="sender">最强王者</span><span>@回复</span>
+                          <span class="receiver">荣耀王者</span>
+                          <span class="time">2020-11-26 23:36:21</span>
+                        </span>
+                        <span class="reply-delete">
+                          <span class="reply">回复</span>
+
+                          <span class="delete">删除</span>
+                        </span>
+                      </div>
+                      <div class="content">哈哈哈哈哈哈哈哈哈哈哈哈哈</div>
+                    </div>
+                  </div>
+                  <div class="comment-item">
+                    <div class="img">
+                      <img src="@/assets/images/皮卡丘.jpg" alt="" />
+                    </div>
+                    <div class="comment-user">
+                      <div class="user">
+                        <span class="name">
+                          <span class="sender">最强王者</span><span>@回复</span>
+                          <span class="receiver">荣耀王者</span>
+                          <span class="time">2020-11-26 23:36:21</span>
+                        </span>
+                        <span class="reply-delete">
+                          <span class="reply">回复</span>
+
+                          <span class="delete">删除</span>
+                        </span>
+                      </div>
+                      <div class="content">
+                        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                      </div>
+                    </div>
+                  </div>
+                  <div class="comment-item">
+                    <div class="img">
+                      <img src="@/assets/images/皮卡丘.jpg" alt="" />
+                    </div>
+                    <div class="comment-user">
+                      <div class="user">
+                        <span class="name">
+                          <span class="sender">最强王者</span><span>@回复</span>
+                          <span class="receiver">荣耀王者</span>
+                          <span class="time">2020-11-26 23:36:21</span>
+                        </span>
+                        <span class="reply-delete">
+                          <span class="reply">回复</span>
+
+                          <span class="delete">删除</span>
+                        </span>
+                      </div>
+                      <div class="content">哈哈哈哈哈哈哈哈哈哈哈</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="img">
+                <img src="@/assets/images/皮卡丘.jpg" alt="" />
+              </div>
+              <div class="comment-user">
+                <div class="user">
+                  <span class="name">
+                    <span class="sender">最强王者</span><span>@回复</span>
+                    <span class="receiver">荣耀王者</span>
+                    <span class="time">2020-11-26 23:36:21</span>
+                  </span>
+                  <span class="reply-delete">
+                    <span class="reply">回复</span>
+
+                    <span class="delete">删除</span>
+                  </span>
+                </div>
+                <div class="content">哈哈哈哈哈哈哈哈</div>
+                <div class="comments"></div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="img">
+                <img src="@/assets/images/皮卡丘.jpg" alt="" />
+              </div>
+              <div class="comment-user">
+                <div class="user">
+                  <span class="name">
+                    <span class="sender">最强王者</span><span>@回复</span>
+                    <span class="receiver">荣耀王者</span>
+                    <span class="time">2020-11-26 23:36:21</span>
+                  </span>
+                  <span class="reply-delete">
+                    <span class="reply">回复</span>
+
+                    <span class="delete">删除</span>
+                  </span>
+                </div>
+                <div class="content">
+                  哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+                </div>
+                <div class="comments"></div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="comment-input">
+          <el-input type="textarea" :rows="4" placeholder="请输入内容">
+          </el-input>
+          <div class="btn">
+<el-button type="success">发布</el-button>
+          </div>
           
         </div>
       </div>
@@ -132,19 +264,93 @@ export default {
       padding: 14px;
       .comment-list {
         padding: 14px;
-        height: 400px;
         border: 1px solid #d4d4d5;
         border-top: 2px solid #008c8c;
+        box-shadow: 0 1px 2px 0 #22242626;
         border-radius: 5px;
-        .header{
+        .header {
           color: #008c8c;
           font-size: 16px;
           font-weight: bolder;
           border-bottom: 1px solid #d4d4d5;
           padding: 14px 0;
         }
-        .content-list{
-          padding-top: 14px 0;
+        .content-list {
+          padding-top: 14px;
+          .comment-item {
+            display: flex;
+            margin-top: 16px;
+            .img {
+              width: 35px;
+              height: 35px;
+              margin-right: 16px;
+              img {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #008c8c;
+                border-radius: 5px;
+              }
+            }
+            .comment-user {
+              flex: 1;
+              display: flex;
+              flex-direction: column;
+              .user {
+                display: flex;
+                justify-content: space-between;
+                .name {
+                  .sender {
+                    font-weight: bolder;
+                  }
+                  .receiver {
+                    margin-left: 4px;
+                    font-weight: bolder;
+                    color: gray;
+                    white-space: nowrap;
+                  }
+                  .time {
+                    font-size: 12px;
+                    color: #008c8c;
+                    margin-left: 6px;
+                    letter-spacing: 0;
+                  }
+                }
+                .reply-delete {
+                  white-space: nowrap;
+
+                  span {
+                    cursor: pointer;
+                    white-space: nowrap;
+                  }
+                  .reply {
+                    color: #008c8c;
+                    white-space: nowrap;
+                  }
+                  .delete {
+                    margin-left: 6px;
+                    color: red;
+                  }
+                }
+              }
+              .content {
+                margin-top: 6px;
+                line-height: 1.3em;
+                font-size: 14px;
+              }
+            }
+            .comments {
+            }
+          }
+        }
+      }
+      .comment-input {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        .btn{
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
         }
       }
     }
