@@ -9,6 +9,7 @@
     display: flex;
     justify-content: space-between;
     width: 70%;
+    max-width: 1008px;
     margin: 10px auto;
     padding: 16px 0;
     .blog-list {
@@ -142,10 +143,13 @@
     .categoryt-tag-recommend {
       flex: 3;
       padding: 0 14px;
-      .category {
+
+      .category,
+      .tag {
         border: 1px solid #d4d4d5;
         border-radius: 5px;
         font-size: 14px;
+        margin-bottom: 14px;
         .header {
           display: flex;
           justify-content: space-between;
@@ -153,6 +157,13 @@
           color: #008c8c;
           background-color: #f3f4f5;
           border-bottom: 1px solid #d4d4d5;
+          .more {
+            display: flex;
+            cursor: pointer;
+            &:hover {
+              color: green;
+            }
+          }
         }
         .category-list {
           margin: 14px;
@@ -176,7 +187,72 @@
               color: blue;
               border: 1px solid blue;
               border-radius: 5px;
-              padding: 6px 12px;
+              position: relative;
+              background-color: white;
+              span {
+                display: inline-block;
+                margin: 4px 10px;
+              }
+              &:before {
+                content: "";
+                display: inline-block;
+                width: 9px;
+                height: 9px;
+                border-left: 1px solid blue;
+                border-bottom: 1px solid blue;
+                position: absolute;
+                background-color: inherit;
+                left: -1px;
+                top: 44%;
+                transform: translate(-50%, -50%) rotate(50deg);
+              }
+            }
+          }
+        }
+        .tag-list {
+          display: flex;
+          flex-wrap: wrap;
+          padding: 14px;
+          .tag {
+            display: flex;
+            flex-wrap: nowrap;
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 12px;
+            &:hover {
+              cursor: pointer;
+              background: rgba(0, 0, 0, 0.03);
+            }
+            .num {
+              margin-left: 16px;
+            }
+          }
+        }
+      }
+      .recommend {
+        border: 1px solid #d4d4d5;
+        border-radius: 5px;
+        font-size: 14px;
+        margin-bottom: 14px;
+        .header {
+          padding: 14px;
+          color: #008c8c;
+          background-color: #f3f4f5;
+          border-bottom: 1px solid #d4d4d5;
+          i {
+            margin-right: 2px;
+          }
+        }
+        .list {
+          .recommend-item {
+            &:hover {
+              cursor: pointer;
+              background: rgba(0, 0, 0, 0.03);
+            }
+
+            padding: 14px;
+            &:not(:last-child) {
+              border-bottom: 1px solid #d4d4d5;
             }
           }
         }
@@ -339,15 +415,60 @@
               <i class="iconfont icon-fenlei"></i>
               分类
             </span>
-            <span class="more"> more >> </span>
+            <span class="more">
+              more <i class="iconfont icon-gengduo"> </i
+            ></span>
           </div>
           <div class="category-list">
             <div>
               <span class="category-name">随笔日志</span>
-              <span class="num">26</span>
+              <span class="num">
+                <span>26</span>
+              </span>
             </div>
-            <div>111</div>
-            <div>111</div>
+            <div>
+              <span class="category-name">随笔日志</span>
+              <span class="num">
+                <span>26</span>
+              </span>
+            </div>
+            <div>
+              <span class="category-name">随笔日志</span>
+              <span class="num">
+                <span>26</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="tag">
+          <div class="header">
+            <span>
+              <i class="iconfont icon-biaoqian"></i>
+              标签
+            </span>
+            <span class="more">
+              more <i class="iconfont icon-gengduo"></i
+            ></span>
+          </div>
+          <div class="tag-list">
+            <el-tag class="tag">
+              <span class="tag-name">标签一</span>
+              <span class="num">26</span>
+            </el-tag>
+            <el-tag class="tag">标签一</el-tag>
+            <el-tag class="tag">标签一</el-tag>
+            <el-tag class="tag">标签一</el-tag>
+          </div>
+        </div>
+        <div class="recommend">
+          <div class="header">
+            <span> <i class="iconfont icon-tuijian"></i>最新推荐 </span>
+          </div>
+          <div class="list">
+            <div class="recommend-item">财富自由</div>
+            <div class="recommend-item">财富自由</div>
+            <div class="recommend-item">财富自由</div>
+            <div class="recommend-item">财富自由</div>
           </div>
         </div>
       </div>

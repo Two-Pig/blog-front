@@ -1,11 +1,16 @@
 /* 为路由添加全局守卫 */
 export default (context) => {
-
     let { app } = context
     app.router.beforeEach((to, from, next) => {
-        console.log(to,from)
+        console.log(context.app.router)
+        console.log(context.route)
+        console.log(to, from)
         // 不需要登录的页面，直接跳转
-        if (['/','/login'].includes(to.path)) {
+        let res = ['/', '/login', '/blog/:id'].some(path => {
+            let arr = path.split(":")
+            if (path == to.path || (arr.length > 1 && to.path.startwith(arr[0]))) return true
+        })
+        if (res) {
             return next()
         }
 
@@ -13,7 +18,7 @@ export default (context) => {
         let token = context.app.$cookies.get("token")
         if (!token) {
             // fullPath 带有参数
-            return next({path:"/login",query:{message:"请先登录",url:to.fullPath}})
+            return next({ path: "/login", query: { message: "请先登录", url: to.fullPath } })
         }
         next()
     })
