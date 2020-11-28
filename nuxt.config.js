@@ -23,7 +23,8 @@ export default {
         {
             src: '@/plugins/http'
         },
-        '@/plugins/router'
+        '@/plugins/router',
+        { src: '@/plugins/vue-mavon-editor', ssr: false }
     ],
 
     // Auto import components (https://go.nuxtjs.dev/config-components)
