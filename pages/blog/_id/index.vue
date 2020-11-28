@@ -261,7 +261,7 @@ export default {
     }
     .comment {
       padding: 14px;
-      .comment-list {
+      .comment-list {  
         padding: 14px;
         border: 1px solid #d4d4d5;
         border-top: 2px solid #008c8c;
