@@ -165,9 +165,8 @@
           <el-input type="textarea" :rows="4" placeholder="请输入内容">
           </el-input>
           <div class="btn">
-<el-button type="success">发布</el-button>
+            <el-button type="success">发布</el-button>
           </div>
-          
         </div>
       </div>
     </div>
@@ -344,10 +343,10 @@ export default {
         }
       }
       .comment-input {
-        display: flex;
+        display: flex; 
         justify-content: space-between;
         margin-top: 16px;
-        .btn{
+        .btn {
           display: flex;
           flex-direction: column;
           justify-content: flex-end;
