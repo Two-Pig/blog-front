@@ -1,10 +1,56 @@
 <template>
   <div class="container">
     <div class="center">
+      <div class="title">
+        <el-input
+          placeholder="请输入内容"
+          v-model="input3"
+          class="input-with-select"
+        >
+          <el-select v-model="select" slot="prepend" placeholder="请选择">
+            <el-option label="餐厅名" value="1"></el-option>
+            <el-option label="订单号" value="2"></el-option>
+            <el-option label="用户电话" value="3"></el-option>
+          </el-select>
+        </el-input>
+      </div>
+
       <!--markdown编辑-->
       <no-ssr>
         <mavon-editor :toolbars="toolbars" v-model="value" />
       </no-ssr>
+
+      <div class="tag">
+        <div>
+          <div class="name">分类</div>
+          <el-select v-model="select" placeholder="请选择">
+            <el-option label="餐厅名" value="1"></el-option>
+            <el-option label="订单号" value="2"></el-option>
+            <el-option label="用户电话" value="3"></el-option>
+          </el-select>
+        </div>
+        <div>
+          <div class="name">标签</div>
+          <el-select v-model="select" placeholder="请选择">
+            <el-option label="餐厅名" value="1"></el-option>
+            <el-option label="订单号" value="2"></el-option>
+            <el-option label="用户电话" value="3"></el-option>
+          </el-select>
+        </div>
+      </div>
+      <div class="picture">
+        <el-input
+          placeholder="请输入内容"
+          v-model="input3"
+          class="input-with-select"
+        >
+          <el-button slot="prepend" type="success">首图</el-button>
+        </el-input>
+      </div>
+      <div class="btn">
+        <el-button type="info" plain>保存</el-button>
+        <el-button type="success" plain>发布</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -14,6 +60,7 @@ export default {
   layout: 'backstage',
   data() {
     return {
+      select: "",
       value: '# hhh',
       toolbars: {
         bold: true, // 粗体
@@ -61,11 +108,47 @@ export default {
   justify-content: center;
   min-height: 100vh;
   .center {
+    display: flex;
+    flex-direction: column;
     max-width: 1127px;
     width: 60%;
     margin: 42px 0;
-    border: 1px solid #d4d4d5;
-    border-radius: 5px;
+    .title {
+      margin-bottom: 26px;
+      /deep/ .el-select {
+        .el-input {
+          width: 100px;
+        }
+      }
+    }
+    .tag {
+      margin-top: 26px;
+      display: flex;
+      justify-content: space-between;
+      > div {
+        display: flex;
+        width: 49%;
+      }
+    }
+    .picture {
+      display: flex;
+      margin-top: 26px;
+    }
+    .btn {
+      text-align: right;
+      margin-top: 26px;
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      color: #008c8c;
+      border: 1px solid #008c8c;
+      border-radius: 5px 0 0 5px;
+    }
+    .el-select {
+      flex: 1;
+    }
   }
 }
 </style>
