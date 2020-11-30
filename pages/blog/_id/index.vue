@@ -50,7 +50,7 @@
                   哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
                 </div>
                 <div class="comments">
-                  <div class="comment-item">
+                  <div class="comment-item"> 
                     <div class="img">
                       <img src="@/assets/images/皮卡丘.jpg" alt="" />
                     </div>
