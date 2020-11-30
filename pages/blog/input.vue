@@ -121,6 +121,9 @@ export default {
         }
       }
     }
+    .markdown-body{
+      height: 60vh;
+    }
     .tag {
       margin-top: 26px;
       display: flex;
