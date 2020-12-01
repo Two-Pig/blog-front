@@ -1,21 +1,41 @@
 <template>
   <div class="container">
     <div class="center">
-      <el-table :data="tableData" height="250" border style="width: 100%">
-        <el-table-column prop="date" label="日期" width="180">
+      <el-table
+        :data="tableData"
+        border
+        :height="tableHeight"
+        style="width: 100%"
+        ref="table"
+      >
+        <el-table-column prop="title" label="标题" width="180">
         </el-table-column>
-        <el-table-column prop="name" label="姓名" width="180">
+        <el-table-column prop="type" label="类型" width="180">
         </el-table-column>
-        <el-table-column prop="address" label="地址"> </el-table-column>
+        <el-table-column prop="updateTime" label="更新时间"> </el-table-column>
+        <el-table-column label="操作">
+          <template slot-scope="scope">
+            <el-button size="mini" @click="handleEdit(scope.$index, scope.row)"
+              >编辑</el-button
+            >
+            <el-button
+              size="mini"
+              type="danger"
+              @click="handleDelete(scope.$index, scope.row)"
+              >删除</el-button
+            >
+          </template>
+        </el-table-column>
       </el-table>
       <el-pagination
+        ref="page"
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
         :current-page="currentPage4"
         :page-sizes="[100, 200, 300, 400]"
         :page-size="100"
         background
-        layout="total, sizes, prev, pager, next, jumper"
+        layout="total, prev, pager, next, sizes, jumper"
         :total="1000"
       >
       </el-pagination>
@@ -28,10 +48,33 @@ export default {
   layout: "backstage",
   data() {
     return {
+      tableData: [
+        {
+          title: "我是一只猪哈哈哈哈",
+          type: "自我介绍",
+          updateTime: "2020-12-1 23:48:26"
+        },
+        {
+          title: "我是一只猪哈哈哈哈",
+          type: "自我介绍",
+          updateTime: "2020-12-1 23:48:26"
+        },
+        {
+          title: "我是一只猪哈哈哈哈",
+          type: "自我介绍",
+          updateTime: "2020-12-1 23:48:26"
+        },
+        {
+          title: "我是一只猪哈哈哈哈",
+          type: "自我介绍",
+          updateTime: "2020-12-1 23:48:26"
+        }
+      ],
       currentPage1: 5,
       currentPage2: 5,
       currentPage3: 5,
-      currentPage4: 4
+      currentPage4: 4,
+      tableHeight: 200
     }
   },
   methods: {
@@ -40,9 +83,22 @@ export default {
     },
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`);
+    },
+    dynamicTableHeight() {
+      this.$nextTick(() => {
+        let windowHeight = window.innerHeight
+        let tableTop = this.$refs.table.$el.getBoundingClientRect().top
+        let pageHeight = this.$refs.page.$el.getBoundingClientRect().height
+        this.tableHeight = windowHeight - tableTop - pageHeight
+      })
     }
   },
-
+  mounted() {
+    this.dynamicTableHeight()
+    window.addEventListener("resize", () => {
+      this.dynamicTableHeight()
+    })
+  }
 }
 </script>
 
@@ -55,9 +111,10 @@ export default {
     max-width: 1127px;
     width: 60%;
     margin: 42px 0;
-    .el-pagination{
-        text-align: right;
+    .el-pagination {
+      text-align: right;
     }
   }
 }
+
 </style>
