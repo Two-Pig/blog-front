@@ -167,6 +167,7 @@ footer {
             <el-button slot="append" icon="el-icon-search"></el-button>
           </el-input>
         </div>
+         <user></user>
       </nav>
     </header>
     <Nuxt />
@@ -203,11 +204,18 @@ footer {
   </div>
 </template>
 <script>
+import User from "@/components/User.vue"
 export default {
+  components:{
+    User
+  },
   data() {
     return {
       searchValue: ""
     }
+  },
+  computed:{
+    
   },
   mounted() {
 

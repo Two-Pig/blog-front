@@ -2,6 +2,7 @@
 export default (context) => {
     let { app } = context
     app.router.beforeEach((to, from, next) => {
+        
         // 不需要登录的页面，直接跳转
         let res = ['/', '/login', '/blog/:id'].some(path => {
             let arr = path.split(":")

@@ -40,14 +40,13 @@ export default {
   methods: {
     login() {
       //todo 发送登录请求
-      this.$cookies.set("token", "token1341245", { maxAge: 24 * 60 * 60 })
-      console.log(this.$route.query.url)
+      this.$cookies.set("token", "token1341245", { maxAge: 24 * 60 * 60, path: "/" })
       if (this.$route.query.url) {
         this.$router.push({ path: this.$route.query.url })
-      }else{
-        this.$router.push({ path: "/" })
+      } else {
+        this.$router.push({ path: "/backstage/list" })
       }
-      
+
     }
 
   }

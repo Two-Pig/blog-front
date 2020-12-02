@@ -154,7 +154,7 @@ footer {
         <div class="logo-nav">
           <div class="logo">
             <h1>
-              <nuxt-link to="/" title="博客">
+              <nuxt-link to="/backstage/list" title="博客">
                 <div class="logo-text">博客后台管理</div>
               </nuxt-link>
               <!-- 这里放logo图片 -->
@@ -163,27 +163,27 @@ footer {
           </div>
           <div class="nav">
             <ul>
-              <li class="nav-item" :class="{active:$route.path=='/blog/list'}">
-                <nuxt-link to="/blog/list"><i class="iconfont icon-shouye"></i>博客列表</nuxt-link>
+              <li
+                class="nav-item"
+                :class="{ active: $route.path == '/backstage/list' }"
+              >
+                <nuxt-link to="/backstage/list"
+                  ><i class="iconfont icon-shouye"></i>博客列表</nuxt-link
+                >
               </li>
-              <li class="nav-item" :class="{active:$route.path=='/blog/input'}">
-                <nuxt-link to="/blog/input"><i class="iconfont icon-guidangxiangmu"></i>博客发布</nuxt-link>
+              <li
+                class="nav-item"
+                :class="{ active: $route.path == '/backstage/input' }"
+              >
+                <nuxt-link to="/backstage/input"
+                  ><i class="iconfont icon-guidangxiangmu"></i
+                  >博客发布</nuxt-link
+                >
               </li>
             </ul>
           </div>
         </div>
-        <div class="user">
-          <el-dropdown>
-            <div class="el-dropdown-link">
-              <img src="@/assets/images/皮卡丘.jpg" alt="" />
-              <span>皮卡丘</span>
-              <i class="el-icon-arrow-down el-icon--right"></i>
-            </div>
-            <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item>注销</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </div>
+        <user></user>
       </nav>
     </header>
     <Nuxt />
@@ -222,11 +222,17 @@ footer {
   </div>
 </template>
 <script>
+import User from "@/components/User.vue"
 export default {
+  components:{
+    User
+  },
   data() {
     return {
-      
+
     }
+  },
+  methods: {
   },
   mounted() {
 
