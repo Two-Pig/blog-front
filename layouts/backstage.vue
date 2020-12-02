@@ -163,18 +163,11 @@ footer {
           </div>
           <div class="nav">
             <ul>
-              <li class="nav-item active">
-                <i class="iconfont icon-shouye"></i>首页
+              <li class="nav-item" :class="{active:$route.path=='/blog/list'}">
+                <nuxt-link to="/blog/list"><i class="iconfont icon-shouye"></i>博客列表</nuxt-link>
               </li>
-              <li class="nav-item"><i class="iconfont icon-fenlei"></i>分类</li>
-              <li class="nav-item">
-                <i class="iconfont icon-biaoqian"></i>标签
-              </li>
-              <li class="nav-item">
-                <i class="iconfont icon-guidangxiangmu"></i>归档
-              </li>
-              <li class="nav-item">
-                <i class="iconfont icon-guanyuwomen"></i>关于我
+              <li class="nav-item" :class="{active:$route.path=='/blog/input'}">
+                <nuxt-link to="/blog/input"><i class="iconfont icon-guidangxiangmu"></i>博客发布</nuxt-link>
               </li>
             </ul>
           </div>
@@ -232,7 +225,7 @@ footer {
 export default {
   data() {
     return {
-      searchValue: ""
+      
     }
   },
   mounted() {
