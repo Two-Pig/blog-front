@@ -69,11 +69,9 @@ export default {
 .user {
   &:hover {
     cursor: pointer;
+    color: white;
   }
   .el-dropdown-link {
-    &:hover {
-      color: white;
-    }
     display: flex;
     align-items: center;
     img {

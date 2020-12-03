@@ -78,6 +78,12 @@ export default {
     }
   },
   methods: {
+    handleEdit(index, row) {
+      console.log("edit")
+    },
+    handleDelete(index, row) {
+      console.log("delete")
+    },
     handleSizeChange(val) {
       console.log(`每页 ${val} 条`);
     },
@@ -89,7 +95,7 @@ export default {
         let windowHeight = window.innerHeight
         let tableTop = this.$refs.table.$el.getBoundingClientRect().top
         let pageHeight = this.$refs.page.$el.getBoundingClientRect().height
-        this.tableHeight = windowHeight - tableTop - pageHeight
+        this.tableHeight = windowHeight - tableTop - pageHeight - 26
       })
     }
   },
@@ -116,5 +122,4 @@ export default {
     }
   }
 }
-
 </style>
