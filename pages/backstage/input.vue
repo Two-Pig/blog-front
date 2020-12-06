@@ -3,45 +3,44 @@
     <div class="center">
       <div class="title">
         <el-input
-          placeholder="请输入内容"
-          v-model="input3"
+          placeholder="请输入标题"
+          v-model="blog.title"
           class="input-with-select"
         >
-          <el-select v-model="select" slot="prepend" placeholder="请选择">
-            <el-option label="餐厅名" value="1"></el-option>
-            <el-option label="订单号" value="2"></el-option>
-            <el-option label="用户电话" value="3"></el-option>
+          <el-select  slot="prepend" v-model="blog.flag" placeholder="请选择">
+            <el-option label="原创" value="1"></el-option>
+            <el-option label="转载" value="2"></el-option>
           </el-select>
         </el-input>
       </div>
 
       <!--markdown编辑-->
       <no-ssr>
-        <mavon-editor :toolbars="toolbars" v-model="value" />
+        <mavon-editor :toolbars="toolbars" v-model="blog.content" />
       </no-ssr>
 
       <div class="tag">
         <div>
           <div class="name">分类</div>
-          <el-select v-model="select" placeholder="请选择">
-            <el-option label="餐厅名" value="1"></el-option>
-            <el-option label="订单号" value="2"></el-option>
-            <el-option label="用户电话" value="3"></el-option>
+          <el-select v-model="blog.type" placeholder="请选择">
+            <el-option label="java" value="1"></el-option>
+            <el-option label="python" value="2"></el-option>
+            <el-option label="c++" value="3"></el-option>
           </el-select>
         </div>
         <div>
           <div class="name">标签</div>
-          <el-select v-model="select" placeholder="请选择">
-            <el-option label="餐厅名" value="1"></el-option>
-            <el-option label="订单号" value="2"></el-option>
-            <el-option label="用户电话" value="3"></el-option>
+          <el-select v-model="blog.tag" placeholder="请选择">
+            <el-option label="java" value="1"></el-option>
+            <el-option label="python" value="2"></el-option>
+            <el-option label="c++" value="3"></el-option>
           </el-select>
         </div>
       </div>
       <div class="picture">
         <el-input
-          placeholder="请输入内容"
-          v-model="input3"
+          placeholder="请输入"
+          v-model="blog.firstPicture"
           class="input-with-select"
         >
           <el-button slot="prepend" type="success">首图</el-button>
@@ -49,19 +48,25 @@
       </div>
       <div class="btn">
         <el-button type="info" plain>保存</el-button>
-        <el-button type="success" plain>发布</el-button>
+        <el-button type="success" plain @click="publish">发布</el-button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import {axios} from "@/plugins/http.js"
 export default {
   layout: 'backstage',
   data() {
     return {
-      select: "",
-      value: '# hhh',
+      blog: {
+        title: "",
+        content:"",
+        firstPicture: "",
+        type:"",
+        tag:""
+      },
       toolbars: {
         bold: true, // 粗体
         italic: true, // 斜体
@@ -99,6 +104,21 @@ export default {
       }
     }
   },
+  methods:{
+    publish(){
+      console.log("点击发布")
+      let url="/blog/addBlog"
+      axios.post(url,this.blog).then(res=>{
+        if(res.data.success){
+          this.$message.success("发布成功")
+        }else{
+          this.$message.error(res.data.message)
+        }
+      }).catch(err=>{
+        this.$message.error(err.message)
+      })
+    }
+  }
 }
 </script>
 
@@ -121,7 +141,7 @@ export default {
         }
       }
     }
-    .markdown-body{
+    .markdown-body {
       height: 60vh;
     }
     .tag {
